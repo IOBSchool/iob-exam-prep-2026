@@ -33,14 +33,14 @@
   /* ===== ヒーロー ===== */
   .hero{
     position:relative;min-height:76vh;display:flex;align-items:flex-end;
-    background-image:url("img/hero.jpg");background-size:cover;background-position:56% center;
+    background-image:url("img/tour_nagano.jpg");background-size:cover;background-position:50% 40%;
     padding:60px 0 40px;overflow:hidden;
   }
   .hero::before{
     content:"";position:absolute;inset:0;
     background:linear-gradient(to bottom,
-      rgba(28,16,9,.05) 0%,rgba(28,16,9,.18) 24%,rgba(28,16,9,.60) 46%,
-      rgba(28,16,9,.88) 70%,rgba(28,16,9,.95) 100%);
+      rgba(28,16,9,0) 0%,rgba(28,16,9,.08) 30%,rgba(28,16,9,.45) 52%,
+      rgba(28,16,9,.78) 74%,rgba(28,16,9,.88) 100%);
   }
   .hero .wrap{position:relative;z-index:1;}
   .hero .eyebrow{color:#f2e4d6;font-size:13px;letter-spacing:.08em;margin-bottom:14px;font-weight:500;text-shadow:0 1px 10px rgba(0,0,0,.9);}
@@ -159,8 +159,8 @@
   /* 締切バー・追従CTA */
   .deadline{background:#fff4e8;border:1px solid #f7d3ab;border-radius:12px;padding:14px 16px;text-align:center;font-size:14px;line-height:1.7;margin:20px 0;}
   .deadline b{color:var(--point);}
-  #countdown{display:none;background:var(--ink);color:#fff;text-align:center;font-size:13.5px;padding:9px 12px;position:sticky;top:0;z-index:40;}
-  #countdown b{color:#ffd7a6;font-size:15px;margin:0 2px;}
+  #countdown{display:none;background:var(--point);color:#fff;text-align:center;font-size:13.5px;padding:9px 12px;position:sticky;top:0;z-index:40;}
+  #countdown b{color:#fff;font-family:"Zen Old Mincho",serif;font-size:17px;margin:0 2px;}
   #stickyCta{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(85,55,39,.97);padding:11px 16px;transform:translateY(120%);transition:transform .25s;box-shadow:0 -3px 16px rgba(0,0,0,.2);}
   #stickyCta.on{transform:translateY(0);}
   #stickyCta a{display:block;max-width:520px;margin:0 auto;background:var(--point);color:#fff;text-align:center;font-weight:700;font-family:"Zen Old Mincho",serif;padding:13px;border-radius:10px;text-decoration:none;font-size:16px;}
@@ -190,7 +190,7 @@
     オーガニック専門家認定試験 対策講座（8週間）。</p>
     <img class="logo" src="iob-logo-orange.png" alt="Institut für Organic Business">
   </div>
-  <div class="hero-cap">共同学習会にて</div>
+  <div class="hero-cap">2019年 長野でのオーガニック視察にて</div>
 </header>
 
 <!-- 締切・受付 -->
