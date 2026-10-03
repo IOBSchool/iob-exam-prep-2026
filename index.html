@@ -120,6 +120,9 @@
   .price-eur{font-family:"Zen Old Mincho",serif;font-size:42px;font-weight:900;color:var(--point);line-height:1.1;}
   .price-eur small{font-size:20px;}
   .price-jpy{font-size:14px;color:var(--sub);margin-top:6px;}
+  .res-toggle{display:flex;gap:8px;justify-content:center;margin:4px 0 16px;}
+  .res-toggle button{flex:1;max-width:170px;padding:10px 8px;border-radius:999px;border:1.5px solid var(--point);background:#fff;color:var(--point);font-weight:700;font-size:14px;cursor:pointer;font-family:inherit;}
+  .res-toggle button.on{background:var(--point);color:#fff;}
   .price-note{font-size:13.5px;color:var(--sub);margin-top:16px;line-height:1.8;text-align:left;}
   .pay-table{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:14px;}
   .pay-table th,.pay-table td{border:1px solid var(--line);padding:9px 10px;text-align:left;line-height:1.6;}
@@ -355,14 +358,18 @@
     <h2 class="sec-title">受講料</h2>
     <div class="price-box">
       <div class="label">オーガニック専門家認定試験 対策講座（8週間）</div>
-      <div class="price-eur"><small>€</small>198</div>
-      <div class="price-jpy" id="jpy">（税込・付加価値税込み）</div>
+      <div class="res-toggle" role="group" aria-label="お住まい">
+        <button type="button" data-res="日本在住" class="on">日本にお住まい</button>
+        <button type="button" data-res="欧州在住">欧州にお住まい</button>
+      </div>
+      <div class="price-eur"><small>€</small><span class="js-price">198</span></div>
+      <div class="price-jpy js-tax">（日本の消費税10%込み）</div>
       <div class="price-note">
         すでにオーガニック専門家コースを学んだ、あなたのための価格です。<br>
         認定を確実に手にするための2ヶ月として、受け取っていただけたら嬉しいです。
       </div>
       <table class="pay-table">
-        <tr><th>Stripe／PayPal</th><td>一括／2回分割（€99×2・手数料なし）</td></tr>
+        <tr><th>Stripe／PayPal</th><td>一括／2回分割（<span class="js-half">€99</span>×2・手数料なし）</td></tr>
         <tr><th>銀行振込<br>（日本・ドイツ）</th><td>一括のみ</td></tr>
       </table>
       <p class="price-note">お支払いのリンクは、フォーム送信後の自動返信メールでご案内します。<br>
@@ -380,7 +387,8 @@
     <details class="faq"><summary>毎週の集まりに、全部は出られないかもしれません。</summary><div class="a">この講座は「毎週集まって、みんなで進む」ことを大事にしています。まずは出られる前提でご参加ください。どうしても難しい週があっても、黙々回や自動配信メール、質問への返信で追いつけるようにしています。</div></details>
     <details class="faq"><summary>試験の申込は、この講座とは別ですか？</summary><div class="a">はい、認定試験の受験申込（受付は11月30日まで）と受験料は、この講座とは別になります。段取りは第1週のご案内でお伝えしますので、迷わず進められます。</div></details>
     <details class="faq"><summary>Daily Letters（1年の講座）とは、どう違いますか？</summary><div class="a">目的の違う、独立した2つの講座です。この8週間の講座（€198）は、12月の認定試験に向けて、仲間と一緒に合格を目指すためのもの。Daily Letters（€280・1年）は、学んだことを1年かけて、毎日の暮らしの中で使えるようにしていくためのものです。いま必要なのは、試験までの8週間（€198）ですか。それとも、1年かけてオーガニックを使い続けるための毎日（€280）ですか。両方を選んでいただいてもかまいません。まずは、いま必要なほうから選んでください。</div></details>
-    <details class="faq"><summary>2回分割はできますか？</summary><div class="a">Stripe（カード）とPayPalは、一括または2回分割（€99×2・手数料なし）をお選びいただけます。銀行振込は一括のみです。</div></details>
+    <details class="faq"><summary>日本と欧州で、受講料が違うのはなぜですか？</summary><div class="a">お住まいの国の税金が違うためです。日本にお住まいの方は日本の消費税（10%）込みで€198、欧州（EU）にお住まいの方はドイツの付加価値税（19%）込みで€214.20です。講座の中身は同じです。</div></details>
+    <details class="faq"><summary>2回分割はできますか？</summary><div class="a">Stripe（カード）とPayPalは、一括または2回分割（日本にお住まいの方は€99×2、欧州にお住まいの方は€107.10×2・手数料なし）をお選びいただけます。銀行振込は一括のみです。</div></details>
     <details class="faq"><summary>返金はありますか？</summary><div class="a">申し訳ありませんが、返金は行っておりません。この点だけ、先にお伝えしておきます。ご不明な点は school@iob.bio までお気軽にどうぞ。</div></details>
   </div>
 </section>
@@ -401,6 +409,14 @@
         <input type="email" name="email" placeholder="example@mail.com" required>
       </div>
       <div class="field">
+        <label>お住まい<span class="req">必須</span></label>
+        <div class="radio-row">
+          <label class="radio-opt"><input type="radio" name="residence" value="日本在住" required checked>日本</label>
+          <label class="radio-opt"><input type="radio" name="residence" value="欧州在住">欧州（EU）</label>
+        </div>
+        <p style="font-size:12px;color:var(--sub);margin-top:8px;line-height:1.7;">お住まいの国の税金により、受講料が変わります（日本：€198 消費税10%込み／欧州：€214.20 付加価値税19%込み）。</p>
+      </div>
+      <div class="field">
         <label>ご希望の決済方法<span class="req">必須</span></label>
         <div class="radio-row">
           <label class="radio-opt"><input type="radio" name="payment" value="銀行振込（日本）" required>銀行振込（日本）</label>
@@ -412,8 +428,8 @@
       <div class="field">
         <label>お支払い回数<span class="opt">Stripe／PayPal の場合のみ</span></label>
         <div class="radio-row">
-          <label class="radio-opt"><input type="radio" name="installment" value="一括" checked>一括 €198</label>
-          <label class="radio-opt"><input type="radio" name="installment" value="2回分割（手数料なし）">2回分割（€99×2）</label>
+          <label class="radio-opt"><input type="radio" name="installment" value="一括" checked>一括 <span class="js-full">€198</span></label>
+          <label class="radio-opt"><input type="radio" name="installment" value="2回分割（手数料なし）">2回分割（<span class="js-half">€99</span>×2）</label>
         </div>
       </div>
       <div class="field">
@@ -498,20 +514,22 @@
   //   コードを直したら「デプロイを管理 → 編集 → バージョン：新バージョン」で再デプロイ。
   const GAS_URL = "https://script.google.com/macros/s/AKfycbzebRdA-kdzFIXAmkNGMDx-Hp20vm1jvcTn2J2KwFd-mrbvoRmf8Bxm6-NI8ZOM1hY0oA/exec"; // 申込管理GAS（os-alumni-2026/gas_code.gs）に統合・type:"試験対策講座"で振り分け（2026-10-03）
 
-  // ── 円換算（当日レートを取得。取れなければ概算にフォールバック）──
+  // ── お住まいの切り替え（2026-09-25 本人ルール：全申込に日本在住／欧州在住。欧州＝VAT19%込み）。円換算は並べない ──
   (function(){
-    var el = document.getElementById('jpy');
-    var FALLBACK = 168; // 1€ の概算（取得できないとき用・適宜更新）
-    function render(rate, approx){
-      var yen = Math.round(198 * rate / 100) * 100;
-      el.innerHTML = "（税込・付加価値税込み）　" + (approx ? "約" : "") + "¥" + yen.toLocaleString() + " 前後";
+    var P = { "日本在住": { full: "198", half: "€99", fullTxt: "€198", tax: "（日本の消費税10%込み）" },
+              "欧州在住": { full: "214.20", half: "€107.10", fullTxt: "€214.20", tax: "（ドイツの付加価値税19%込み）" } };
+    function apply(res){
+      var p = P[res] || P["日本在住"];
+      document.querySelectorAll('.js-price').forEach(function(e){ e.textContent = p.full; });
+      document.querySelectorAll('.js-tax').forEach(function(e){ e.textContent = p.tax; });
+      document.querySelectorAll('.js-half').forEach(function(e){ e.textContent = p.half; });
+      document.querySelectorAll('.js-full').forEach(function(e){ e.textContent = p.fullTxt; });
+      document.querySelectorAll('.res-toggle button').forEach(function(b){ b.classList.toggle('on', b.getAttribute('data-res') === res); });
+      document.querySelectorAll('input[name=residence]').forEach(function(r){ r.checked = (r.value === res); });
     }
-    render(FALLBACK, true);
-    try{
-      fetch("https://open.er-api.com/v6/latest/EUR").then(function(r){return r.json();}).then(function(d){
-        if(d && d.rates && d.rates.JPY){ render(d.rates.JPY, true); }
-      }).catch(function(){});
-    }catch(e){}
+    document.querySelectorAll('.res-toggle button').forEach(function(b){ b.addEventListener('click', function(){ apply(b.getAttribute('data-res')); }); });
+    document.querySelectorAll('input[name=residence]').forEach(function(r){ r.addEventListener('change', function(){ apply(r.value); }); });
+    apply("日本在住");
   })();
 
   // ── 追従CTA ──
@@ -543,7 +561,8 @@
       type: "試験対策講座",
       name: form.name.value,
       email: form.email.value,
-      plan: "オーガニック専門家認定試験 対策講座（8週間）（€198）",
+      residence: (form.querySelector('input[name=residence]:checked') || {}).value || "日本在住",
+      plan: "オーガニック専門家認定試験 対策講座（8週間）",
       payment: (form.querySelector('input[name=payment]:checked') || {}).value || "",
       installment: (form.querySelector('input[name=installment]:checked') || {}).value || "",
       monitorName: form.monitorName.value,
@@ -556,6 +575,7 @@
       var lines = [
         "お名前：" + data.name,
         "メールアドレス：" + data.email,
+        "お住まい：" + data.residence,
         "ご希望の決済方法：" + data.payment,
         "お支払い回数：" + data.installment,
         "ご質問・ご連絡事項：" + (data.message || "（なし）")
