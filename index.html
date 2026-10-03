@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>ひとりで勉強しない8週間｜オーガニック専門家認定試験 対策講座</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --point:#f26b3b;
+    --ink:#553727;
+    --bg:#f9f7ef;
+    --second:#0085c9;
+    --sub:#85634b;
+    --line:#e6ddc9;
+    --white:#fffdf8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"Noto Sans JP",sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.9;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:680px;margin:0 auto;padding:0 20px;}
+  h1,h2,h3,.mincho{font-family:"Zen Old Mincho",serif;}
+
+  /* ===== ヒーロー ===== */
+  .hero{
+    position:relative;min-height:76vh;display:flex;align-items:flex-end;
+    background-image:url("img/hero.jpg");background-size:cover;background-position:56% center;
+    padding:60px 0 40px;overflow:hidden;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(to bottom,
+      rgba(28,16,9,.05) 0%,rgba(28,16,9,.18) 24%,rgba(28,16,9,.60) 46%,
+      rgba(28,16,9,.88) 70%,rgba(28,16,9,.95) 100%);
+  }
+  .hero .wrap{position:relative;z-index:1;}
+  .hero .eyebrow{color:#f2e4d6;font-size:13px;letter-spacing:.08em;margin-bottom:14px;font-weight:500;text-shadow:0 1px 10px rgba(0,0,0,.9);}
+  .hero h1{font-size:30px;font-weight:700;line-height:1.5;margin-bottom:18px;color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.85),0 1px 4px rgba(0,0,0,.6);}
+  .hero .lead{font-size:15px;color:#f4e9dd;line-height:1.95;text-shadow:0 1px 12px rgba(0,0,0,.85);}
+  .hero .logo{display:block;margin-top:24px;width:168px;max-width:52%;height:auto;filter:brightness(0) invert(1);opacity:.92;}
+  .hero-cap{position:absolute;right:14px;bottom:10px;z-index:1;font-size:10.5px;color:rgba(255,255,255,.6);}
+  .sp{display:none;}
+  @media(max-width:480px){
+    .sp{display:inline;}
+    .hero{min-height:84vh;background-position:52% 22%;padding-bottom:34px;}
+    .hero h1{font-size:26px;line-height:1.58;}
+    .hero .lead{font-size:14.5px;}
+    .hero .logo{width:148px;margin-top:20px;}
+    section{padding:32px 0;}
+  }
+
+  section{padding:38px 0;}
+  section.alt{background:var(--white);}
+  .sec-title{font-size:20px;font-weight:700;margin-bottom:20px;padding-left:14px;border-left:5px solid var(--point);line-height:1.5;}
+  .sec-eyebrow{font-size:12px;color:var(--second);font-weight:700;letter-spacing:.06em;margin-bottom:6px;}
+  .band{display:inline-block;background:var(--point);color:#fff;font-weight:700;font-size:14px;padding:7px 16px;border-radius:999px;margin-bottom:14px;font-family:"Zen Old Mincho",serif;letter-spacing:.02em;}
+
+  p{margin-bottom:14px;}
+  p:last-child{margin-bottom:0;}
+  .hl{background:linear-gradient(transparent 58%, #f7e0a0 58%);font-weight:700;padding:0 1px;}
+
+  .card{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:24px 22px;margin-bottom:16px;}
+  .photo{margin:22px 0;}
+  .photo img{width:100%;height:auto;border-radius:14px;display:block;}
+  .photo .cap{font-size:12.5px;color:var(--sub);margin-top:8px;line-height:1.7;}
+
+  .check-list{list-style:none;}
+  .check-list li{padding:12px 0 12px 30px;position:relative;font-size:15px;border-bottom:1px dashed var(--line);line-height:1.8;}
+  .check-list li:last-child{border-bottom:none;}
+  .check-list li::before{content:"□";position:absolute;left:0;top:11px;color:var(--point);font-weight:700;font-size:17px;}
+
+  .future{list-style:none;}
+  .future li{padding:15px 0;border-bottom:1px dashed var(--line);display:flex;gap:14px;align-items:flex-start;}
+  .future li:last-child{border-bottom:none;}
+  .future li .when{flex:none;width:70px;font-family:"Zen Old Mincho",serif;font-weight:700;font-size:14px;color:var(--point);padding-top:2px;}
+  .future li .what{flex:1;font-size:15px;line-height:1.8;}
+
+  /* 3ステップ */
+  .steps{counter-reset:st;list-style:none;}
+  .steps li{position:relative;padding:18px 18px 18px 60px;background:var(--white);border:1px solid var(--line);border-radius:14px;margin-bottom:14px;}
+  .steps li::before{counter-increment:st;content:counter(st);position:absolute;left:16px;top:18px;width:32px;height:32px;background:var(--point);color:#fff;border-radius:50%;font-family:"Zen Old Mincho",serif;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:16px;}
+  .steps li b{display:block;font-size:16px;margin-bottom:5px;font-family:"Zen Old Mincho",serif;}
+
+  /* 週割り表 */
+  .weekgrid{width:100%;border-collapse:collapse;font-size:14px;background:var(--white);border:1px solid var(--line);border-radius:12px;overflow:hidden;}
+  .weekgrid th,.weekgrid td{padding:10px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;line-height:1.65;}
+  .weekgrid thead th{background:#f2ead9;font-size:13px;}
+  .weekgrid .wk{font-family:"Zen Old Mincho",serif;font-weight:700;color:var(--point);white-space:nowrap;}
+  .weekgrid .mo{background:#faf5e9;font-weight:700;font-size:12.5px;color:var(--sub);}
+  .weekgrid tr:last-child td{border-bottom:none;}
+
+  .n-block{background:var(--ink);color:#f3e9dc;border-radius:14px;padding:26px 22px;}
+  .n-block .em{color:#ffd7a6;font-weight:700;}
+  .n-block p{margin-bottom:12px;}
+
+  /* なつこ紹介 */
+  .bio{display:flex;gap:16px;align-items:flex-start;}
+  .bio img{width:96px;height:96px;border-radius:50%;object-fit:cover;flex:none;border:3px solid var(--white);box-shadow:0 2px 12px rgba(85,55,39,.15);}
+  .bio .name{font-family:"Zen Old Mincho",serif;font-weight:700;font-size:17px;margin-bottom:2px;}
+  .bio .role{font-size:12.5px;color:var(--sub);margin-bottom:8px;}
+  @media(max-width:480px){.bio{flex-direction:column;align-items:center;text-align:center;}}
+
+  .incl{list-style:none;}
+  .incl li{padding:11px 0 11px 28px;position:relative;font-size:15px;border-bottom:1px dashed var(--line);line-height:1.75;}
+  .incl li:last-child{border-bottom:none;}
+  .incl li::before{content:"✓";position:absolute;left:0;top:11px;color:var(--point);font-weight:700;}
+
+  /* 価格 */
+  .price-box{background:var(--white);border:2px solid var(--point);border-radius:16px;padding:26px 22px;text-align:center;}
+  .price-box .label{font-size:14px;color:var(--sub);margin-bottom:6px;}
+  .price-eur{font-family:"Zen Old Mincho",serif;font-size:42px;font-weight:900;color:var(--point);line-height:1.1;}
+  .price-eur small{font-size:20px;}
+  .price-jpy{font-size:14px;color:var(--sub);margin-top:6px;}
+  .price-note{font-size:13.5px;color:var(--sub);margin-top:16px;line-height:1.8;text-align:left;}
+  .pay-table{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:14px;}
+  .pay-table th,.pay-table td{border:1px solid var(--line);padding:9px 10px;text-align:left;line-height:1.6;}
+  .pay-table th{background:#faf5e9;white-space:nowrap;}
+
+  /* FAQ */
+  .faq{border-bottom:1px solid var(--line);}
+  .faq summary{cursor:pointer;padding:15px 0;font-weight:700;font-size:15px;list-style:none;position:relative;padding-right:28px;}
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary::after{content:"＋";position:absolute;right:4px;top:15px;color:var(--point);font-weight:700;}
+  .faq[open] summary::after{content:"−";}
+  .faq .a{padding:0 0 16px;font-size:14.5px;color:var(--sub);line-height:1.85;}
+
+  /* フォーム */
+  #apply{background:var(--white);}
+  .field{margin-bottom:18px;}
+  .field label{display:block;font-weight:700;font-size:14.5px;margin-bottom:8px;}
+  .field .req{background:var(--point);color:#fff;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;margin-left:8px;}
+  .field .opt{color:var(--sub);font-size:12px;font-weight:400;margin-left:8px;}
+  input[type=text],input[type=email],textarea,select{width:100%;border:1px solid var(--line);border-radius:10px;padding:12px 13px;font-size:15px;font-family:inherit;background:#fff;color:var(--ink);}
+  textarea{min-height:90px;resize:vertical;}
+  .radio-row{display:flex;flex-wrap:wrap;gap:8px;}
+  .radio-opt{flex:1;min-width:120px;border:1px solid var(--line);border-radius:10px;padding:11px 12px;font-size:13.5px;font-weight:500;cursor:pointer;background:#fff;line-height:1.4;display:flex;align-items:center;gap:8px;}
+  .radio-opt input{accent-color:var(--point);flex:none;}
+  .check{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;line-height:1.7;}
+  .check input{margin-top:5px;accent-color:var(--point);flex:none;}
+  .submit{width:100%;background:var(--point);color:#fff;border:none;border-radius:12px;padding:17px;font-size:17px;font-weight:700;font-family:"Zen Old Mincho",serif;cursor:pointer;margin-top:6px;}
+  .submit:disabled{opacity:.6;}
+  .form-note{text-align:center;font-size:12.5px;color:var(--sub);margin-top:12px;line-height:1.7;}
+  #thanks,#fallback{display:none;text-align:center;padding:10px 0;}
+  #thanks .mincho,#fallback .mincho{font-size:20px;font-weight:700;margin-bottom:14px;color:var(--point);}
+  .next-steps{list-style:none;text-align:left;margin-top:16px;}
+  .next-steps li{padding:12px 0 12px 24px;position:relative;font-size:14px;border-bottom:1px dashed var(--line);line-height:1.75;}
+  .next-steps li::before{content:"→";position:absolute;left:0;color:var(--point);font-weight:700;}
+  .fallback-btn{display:inline-block;background:var(--point);color:#fff;font-weight:700;padding:14px 26px;border-radius:12px;text-decoration:none;margin:14px 0;}
+
+  /* 締切バー・追従CTA */
+  .deadline{background:#fff4e8;border:1px solid #f7d3ab;border-radius:12px;padding:14px 16px;text-align:center;font-size:14px;line-height:1.7;margin:20px 0;}
+  .deadline b{color:var(--point);}
+  #countdown{display:none;background:var(--ink);color:#fff;text-align:center;font-size:13.5px;padding:9px 12px;position:sticky;top:0;z-index:40;}
+  #countdown b{color:#ffd7a6;font-size:15px;margin:0 2px;}
+  #stickyCta{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(85,55,39,.97);padding:11px 16px;transform:translateY(120%);transition:transform .25s;box-shadow:0 -3px 16px rgba(0,0,0,.2);}
+  #stickyCta.on{transform:translateY(0);}
+  #stickyCta a{display:block;max-width:520px;margin:0 auto;background:var(--point);color:#fff;text-align:center;font-weight:700;font-family:"Zen Old Mincho",serif;padding:13px;border-radius:10px;text-decoration:none;font-size:16px;}
+  body.has-sticky{padding-bottom:74px;}
+
+  .closing{background:var(--ink);color:#f3e9dc;text-align:center;padding:46px 0;}
+  .closing .mincho{font-size:19px;line-height:2;}
+  .closing .slogan{color:#ffd7a6;font-weight:700;}
+  .closing .actions{margin-top:26px;display:flex;flex-direction:column;gap:12px;align-items:center;}
+  .closing .primary{background:var(--point);color:#fff;font-weight:700;font-family:"Zen Old Mincho",serif;padding:14px 34px;border-radius:12px;text-decoration:none;font-size:16px;}
+  .closing .actions a:not(.primary){color:#f2e4d6;font-size:13.5px;}
+  footer{background:#3f2a1d;color:#d9c9b8;text-align:center;font-size:12.5px;padding:28px 20px;line-height:2;}
+  footer a{color:#f2c7a3;}
+</style>
+</head>
+<body>
+
+<div id="countdown"><span id="cd-text"></span></div>
+
+<!-- ============ ヒーロー（D：圧倒的な違いの宣言＋B） ============ -->
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">オーガニック専門家コースを学んだ、あなたへ</p>
+    <h1>ひとりで勉強しない8週間。<br>仲間と、合格を目指す。</h1>
+    <p class="lead">12月の認定試験を、一人にしない。<br>
+    弱いところを一緒に見つけて、毎週集まって、手を動かす。<br>
+    オーガニック専門家認定試験 対策講座（8週間）。</p>
+    <img class="logo" src="iob-logo-orange.png" alt="Institut für Organic Business">
+  </div>
+  <div class="hero-cap">共同学習会にて</div>
+</header>
+
+<!-- 締切・受付 -->
+<div class="wrap">
+  <div class="deadline" id="deadlineNote">
+    受付は <b>10月14日（水）23:59（日本時間）</b> まで。<br>
+    10月19日（月）に、参加するみんなで同時にスタートします。
+  </div>
+</div>
+
+<!-- ============ ① なりたい姿（B：それで何が変わるか／竹松1） ============ -->
+<section>
+  <div class="wrap">
+    <p class="sec-eyebrow">AFTER 8 WEEKS</p>
+    <h2 class="sec-title">2ヶ月後、認定試験を<br>落ち着いて受けているあなたへ。</h2>
+    <p>12月。試験の画面を開いても、もう身構えなくなっています。<br>
+    「ここは大丈夫」「ここは見直した」と、自分で言えるところまで来ている。</p>
+    <p>それは、一気に詰め込んだからではありません。<br>
+    <span class="hl">弱いところを先に見つけて、毎週すこしずつ埋めてきた</span>から。</p>
+    <p>あなたはもう、この内容を一度学び終えた人です。<br>
+    ゼロから覚え直すのではなく、すでに自分の中にあるものに、もう一度自信を戻していく2ヶ月です。</p>
+  </div>
+</section>
+
+<!-- ============ ② 困っていること（竹松2：チェックリスト） ============ -->
+<section class="alt">
+  <div class="wrap">
+    <span class="band">こんなところで、止まっていませんか</span>
+    <ul class="check-list">
+      <li>受けようとは思っている。でも、いつまでも「そのうち」になっている</li>
+      <li>動画をもう一度見直そうと思ったまま、日々の忙しさに紛れてしまう</li>
+      <li>どこが弱いのか、自分でもよく分からない。だから手がつけられない</li>
+      <li>一人だと、机に向かう前にスマホを開いてしまう</li>
+      <li>次の試験は来年4月。今回を逃したら、また半年先だと分かっている</li>
+      <li>せっかく学んだのに、認定を手にしないまま時間だけ過ぎている</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ ③ 今までしてきたこと（竹松3：承認） ============ -->
+<section>
+  <div class="wrap">
+    <h2 class="sec-title">あなたは、ちゃんと動いてきました。</h2>
+    <p>テキストを開き直したこともある。<br>
+    カレンダーに「勉強」と書き込んだこともある。<br>
+    やる気になった夜に、動画を1本見返したこともある。</p>
+    <p>続かなかったのは、あなたの意志が弱いからではありません。</p>
+  </div>
+</section>
+
+<!-- ============ ④ なぜうまくいかなかったか（竹松4＝N：見えない敵） ============ -->
+<section class="alt">
+  <div class="wrap">
+    <span class="band">続かなかった、本当の理由</span>
+    <div class="n-block">
+      <p>一人で、締切に向かう仕組みがなかった。<br>ただ、それだけです。</p>
+      <p>やる気は、感化された日がいちばん高くて、あとは静かに下がっていきます。<br>
+      そこに「今日は誰も見ていない」が重なると、勉強は<span class="em">いつでもできる＝いつまでもしない</span>に変わってしまう。</p>
+      <p>これは、あなただけの話ではありません。<br>
+      忙しく暮らしている大人が、一人で試験勉強を続けるのは、そもそも仕組み上むずかしいんです。</p>
+      <p>だから、変えるのは気合いではなく、<span class="em">環境のほう</span>。<br>
+      弱いところを一緒に見つけてくれる人と、毎週戻ってこられる場所があればいい。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ D＋E：なぜこの講座か（作った本人が直接見る） ============ -->
+<section>
+  <div class="wrap">
+    <p class="sec-eyebrow">この講座だけの、ちがい</p>
+    <h2 class="sec-title">試験の元になっている授業を<br>つくった本人が、直接見ます。</h2>
+    <p>市販の問題集も、他人が作った対策動画もありません。<br>
+    出題の範囲そのものを設計した、レムケなつこが、あなたの弱いところを一緒に見ます。</p>
+    <p>そして、一人で受ける講座ではありません。<br>
+    同じ12月に向かう仲間と、<span class="hl">一緒に机に向かい、合格を目指します</span>。<br>
+    先に進んだ人が、つまずいている人に一言を返す。その空気そのものが、勉強を続けさせてくれます。</p>
+    <p style="color:var(--sub);font-size:14px;">一人で完璧に仕上げてから受けたい方より、仲間と一歩ずつ進めたい方に向いています。</p>
+  </div>
+</section>
+
+<!-- ============ I：8週間の型（3ステップ＋週割り／焼肉の試食＝中身を出す） ============ -->
+<section class="alt">
+  <div class="wrap">
+    <p class="sec-eyebrow">HOW IT WORKS</p>
+    <h2 class="sec-title">2ヶ月の進み方は、<br>たった3つのステップです。</h2>
+    <ol class="steps">
+      <li><b>① 弱い章から決める</b>最初の週に、範囲の全体像を一緒に見渡して、あなたが弱いところを見つけて宣言します。全部やろうとしない。弱いところから埋めるのが、いちばん早いからです。</li>
+      <li><b>② 毎週集まって、埋める（1ヶ月目）</b>週に1回みんなで集まります。2回は要点を整理するセミナー、2回は「ここが分からない」に直接答える質疑応答。弱いところが、毎週ひとつずつ減っていきます。</li>
+      <li><b>③ 黙々と手を動かし続ける（2ヶ月目）</b>週に1回、みんなで集まって黙々と勉強する時間をつくります。その場でも聞けますし、それ以外の質問は、まとめて週に1回、なつこがお答えします。あわせて、復習の問題が自動でメールで届くので、それに答えていくうちに、記憶が定着していきます。</li>
+    </ol>
+
+    <p style="margin-top:22px;font-weight:700;">8週間の流れ</p>
+    <table class="weekgrid">
+      <thead><tr><th>週</th><th>回</th><th>やること</th></tr></thead>
+      <tbody>
+        <tr><td class="mo" colspan="3">1ヶ月目：毎週集まる（10/19〜11/15）</td></tr>
+        <tr><td class="wk">第1週</td><td>セミナー①</td><td>2ヶ月の地図と範囲の全体像。弱い章を見つけて宣言。小グループづくり。試験の申込（受付は11/30まで）の段取りも確認します。</td></tr>
+        <tr><td class="wk">第2週</td><td>セミナー②</td><td>毎年つまずきやすいところを、まとめて整理します。</td></tr>
+        <tr><td class="wk">第3週</td><td>質疑応答①</td><td>あなたの弱いところの疑問に、直接お答えします。</td></tr>
+        <tr><td class="wk">第4週</td><td>質疑応答②</td><td>進み具合を、小グループで分かち合います。</td></tr>
+        <tr><td class="mo" colspan="3">2ヶ月目：黙々と、でも一人じゃない（11/16〜12/13）</td></tr>
+        <tr><td class="wk">第5〜7週</td><td>黙々回</td><td>週1で集まって黙々と勉強＋その場で質問。復習メールが届くので、それに答えていきます。</td></tr>
+        <tr><td class="wk">第8週</td><td>直前の回</td><td>不安の棚卸しをして、みんなで試験へ送り出します。</td></tr>
+        <tr><td class="wk">12/14〜20</td><td>認定試験</td><td>いよいよ本番。ここまで来たら、あとは出し切るだけ。</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:12.5px;color:var(--sub);margin-top:12px;">※集まりは日本時間の夜・週1回（各60〜90分）。曜日と時刻は、最初のご案内で確定します。</p>
+  </div>
+</section>
+
+<!-- ============ E：なつこ（証拠＝実在の経歴・自信の哲学） ============ -->
+<section>
+  <div class="wrap">
+    <h2 class="sec-title">教えるのは、レムケなつこです。</h2>
+    <div class="bio">
+      <img src="img/natsuko.jpg" alt="レムケなつこ">
+      <div>
+        <div class="name">レムケなつこ</div>
+        <div class="role">ドイツ在住オーガニック教育の専門家<br>Institut für Organic Business GmbH 代表</div>
+        <p style="font-size:14px;">オーガニック専門家コースをつくった本人です。慶應義塾大学を卒業後、JICAの活動を経てドイツへ。ドイツ政府の給付型奨学金で有機農業を研究し、修士を取りました。</p>
+      </div>
+    </div>
+    <p style="margin-top:18px;">わたしが教育で大事にしているのは、正しさを覚えてもらうことではありません。<br>
+    <span class="hl">確かな知識で、あなたが本来もっている思いに、自信を戻すこと</span>です。</p>
+    <p>試験は、その自信を一度かたちにする場所だと思っています。<br>
+    合格は通過点。そこから先、あなたが自分の言葉でオーガニックを広げていく——その最初の一歩を、一緒に踏みに行きましょう。</p>
+  </div>
+</section>
+
+<!-- ============ 含まれるもの ============ -->
+<section class="alt">
+  <div class="wrap">
+    <h2 class="sec-title">2ヶ月に、含まれるもの</h2>
+    <ul class="incl">
+      <li>オンラインの集まり 全8回（セミナー2回・質疑応答2回・黙々回4回）</li>
+      <li>範囲の全体像と「弱い章から」の学習の組み立て</li>
+      <li>復習・確認の問題が届く自動配信メール（2ヶ月目）</li>
+      <li>なつこへの質問（集まりの中で聞けるほか、いつでも受付→週に1回まとめてお答えします）</li>
+      <li>同じ12月に向かう仲間との小グループ</li>
+      <li>認定試験の申込（受付は11/30まで）の段取りのご案内</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ U：なぜ今か ============ -->
+<section>
+  <div class="wrap">
+    <span class="band">なぜ、今なのか</span>
+    <p>認定試験は、1年に2回だけ。今回は<b>12月14日〜20日</b>、次は来年の4月です。</p>
+    <p>ここで一区切りつけられたら、年明けを「認定を持った自分」で始められます。<br>
+    逆に今回を見送ると、次に机に向かうのは、また半年先になりがちです。<br>
+    先延ばしがいちばんもったいない、というだけの話です。</p>
+    <p>そして、この講座は<span class="hl">10月19日に、みんなで一斉にスタート</span>します。<br>
+    小グループを組んで、同じ地図を見ながら進むための準備があるので、受付は<b>10月14日（水）</b>までとさせてください。<br>
+    駆け込みでも大丈夫。まずは「やる」と決めるところからです。</p>
+  </div>
+</section>
+
+<!-- ============ 価格 ============ -->
+<section class="alt">
+  <div class="wrap">
+    <h2 class="sec-title">受講料</h2>
+    <div class="price-box">
+      <div class="label">オーガニック専門家認定試験 対策講座（8週間）</div>
+      <div class="price-eur"><small>€</small>198</div>
+      <div class="price-jpy" id="jpy">（税込・付加価値税込み）</div>
+      <div class="price-note">
+        すでにオーガニック専門家コースを学んだ、あなたのための価格です。<br>
+        認定を確実に手にするための2ヶ月として、受け取っていただけたら嬉しいです。
+      </div>
+      <table class="pay-table">
+        <tr><th>Stripe／PayPal</th><td>一括／2回分割（€99×2・手数料なし）</td></tr>
+        <tr><th>銀行振込<br>（日本・ドイツ）</th><td>一括のみ</td></tr>
+      </table>
+      <p class="price-note">お支払いのリンクは、フォーム送信後の自動返信メールでご案内します。<br>
+      <b>お支払いは、お申し込みから3日以内にお願いします。</b></p>
+    </div>
+    <div style="text-align:center;margin-top:22px;"><a href="#apply" class="submit" style="display:inline-block;width:auto;padding:15px 40px;text-decoration:none;">申し込みフォームへ</a></div>
+  </div>
+</section>
+
+<!-- ============ FAQ（試験の内部仕様は一切書かない） ============ -->
+<section>
+  <div class="wrap">
+    <h2 class="sec-title">よくあるご質問</h2>
+    <details class="faq"><summary>勉強が久しぶりで、ついていけるか不安です。</summary><div class="a">大丈夫です。この講座は、新しいことを覚え直す場ではなく、一度学んだことに自信を戻す場です。質問はいつでも受け付けて、週に1回まとめてお答えするので、置いていかれません。一人で抱えないための2ヶ月です。</div></details>
+    <details class="faq"><summary>毎週の集まりに、全部は出られないかもしれません。</summary><div class="a">この講座は「毎週集まって、みんなで進む」ことを大事にしています。まずは出られる前提でご参加ください。どうしても難しい週があっても、黙々回や自動配信メール、質問への返信で追いつけるようにしています。</div></details>
+    <details class="faq"><summary>試験の申込は、この講座とは別ですか？</summary><div class="a">はい、認定試験の受験申込（受付は11月30日まで）と受験料は、この講座とは別になります。段取りは第1週のご案内でお伝えしますので、迷わず進められます。</div></details>
+    <details class="faq"><summary>Daily Letters（1年の講座）とは、どう違いますか？</summary><div class="a">目的の違う、独立した2つの講座です。この8週間の講座（€198）は、12月の認定試験に向けて、仲間と一緒に合格を目指すためのもの。Daily Letters（€280・1年）は、学んだことを1年かけて、毎日の暮らしの中で使えるようにしていくためのものです。いま必要なのは、試験までの8週間（€198）ですか。それとも、1年かけてオーガニックを使い続けるための毎日（€280）ですか。両方を選んでいただいてもかまいません。まずは、いま必要なほうから選んでください。</div></details>
+    <details class="faq"><summary>2回分割はできますか？</summary><div class="a">Stripe（カード）とPayPalは、一括または2回分割（€99×2・手数料なし）をお選びいただけます。銀行振込は一括のみです。</div></details>
+    <details class="faq"><summary>返金はありますか？</summary><div class="a">申し訳ありませんが、返金は行っておりません。この点だけ、先にお伝えしておきます。ご不明な点は school@iob.bio までお気軽にどうぞ。</div></details>
+  </div>
+</section>
+
+<!-- ============ K：申込（最初の一歩を軽く） ============ -->
+<section id="apply">
+  <div class="wrap">
+    <h2 class="sec-title">お申し込み</h2>
+    <p style="margin-bottom:20px;">難しいことは、始まってから一緒にやります。<br>いまは、<span class="hl">「やる」と決めて、名前とメールを書くだけ</span>で大丈夫です。</p>
+
+    <form id="applyForm">
+      <div class="field">
+        <label>お名前<span class="req">必須</span></label>
+        <input type="text" name="name" placeholder="例：山田 花子" required>
+      </div>
+      <div class="field">
+        <label>メールアドレス<span class="req">必須</span></label>
+        <input type="email" name="email" placeholder="example@mail.com" required>
+      </div>
+      <div class="field">
+        <label>ご希望の決済方法<span class="req">必須</span></label>
+        <div class="radio-row">
+          <label class="radio-opt"><input type="radio" name="payment" value="銀行振込（日本）" required>銀行振込（日本）</label>
+          <label class="radio-opt"><input type="radio" name="payment" value="銀行振込（ドイツ）">銀行振込（ドイツ）</label>
+          <label class="radio-opt"><input type="radio" name="payment" value="Stripe（クレジットカード）">Stripe（カード）</label>
+          <label class="radio-opt"><input type="radio" name="payment" value="PayPal">PayPal</label>
+        </div>
+      </div>
+      <div class="field">
+        <label>お支払い回数<span class="opt">Stripe／PayPal の場合のみ</span></label>
+        <div class="radio-row">
+          <label class="radio-opt"><input type="radio" name="installment" value="一括" checked>一括 €198</label>
+          <label class="radio-opt"><input type="radio" name="installment" value="2回分割（手数料なし）">2回分割（€99×2）</label>
+        </div>
+      </div>
+      <div class="field">
+        <label>受講後の感想の掲載<span class="opt">任意・のちほど改めて伺います</span></label>
+        <select name="monitorName">
+          <option value="未定・あとで伺う">まだ決めていない（あとで伺います）</option>
+          <option value="フルネーム">フルネームで掲載してよい</option>
+          <option value="イニシャル">イニシャルなら掲載してよい</option>
+          <option value="掲載しない">掲載はしないでほしい</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>ご質問・ご連絡事項<span class="opt">任意</span></label>
+        <textarea name="message" placeholder="気になること、ご相談など、なんでもどうぞ。"></textarea>
+      </div>
+      <div class="field">
+        <div class="check">
+          <input type="checkbox" id="agree" required>
+          <label for="agree" style="font-weight:400;margin:0;">
+            受講料・お支払い・返金に関する記載、ならびに<a href="terms.html" target="_blank" rel="noopener" style="color:var(--point);font-weight:700;">受講規約</a>・<a href="privacy.html" style="color:var(--point);font-weight:700;">プライバシーポリシー</a>・<a href="tokushoho.html" style="color:var(--point);font-weight:700;">特定商取引法に基づく表記</a>を確認し、同意のうえお申し込みします。
+          </label>
+        </div>
+      </div>
+      <button type="submit" class="submit" id="submitBtn">この内容で申し込む</button>
+      <div class="form-note">送信後、自動返信メールにて<br>お支払い方法のご案内をお送りします。</div>
+    </form>
+
+    <div id="thanks">
+      <div class="mincho">お申し込みありがとうございます。</div>
+      <p>お支払いのご案内を、ご登録のメールアドレス宛にお送りします。<br>
+      混み合っているときは、お届けまでに最大で翌日までかかることがあります。<br>
+      届かないときは school@iob.bio までご連絡ください。</p>
+      <p style="margin-top:20px;font-weight:700;">始まるまでに、やっておいてほしいことが2つあります。</p>
+      <ul class="next-steps">
+        <li><b>自動返信メールを開いて、お支払いを済ませてください。</b>迷惑メールに入ることがあります。</li>
+        <li><b>「ここが弱いかも」という章を、ひとつだけメモしておいてください。</b>きれいにまとめなくて大丈夫。第1週で、それを使います。</li>
+      </ul>
+      <p style="margin-top:20px;">10月19日に、一緒に始めましょう。</p>
+    </div>
+
+    <div id="fallback">
+      <div class="mincho">恐れ入ります。あと一手間だけお願いします。</div>
+      <p>ただいまフォームの自動送信が使えない状態です。<br>
+      下のボタンを押すと、入力いただいた内容が入ったメールが開きます。<br>
+      そのまま送信していただければ、確実にお申し込みを受け付けます。</p>
+      <a id="fallbackMail" class="fallback-btn" href="#">メールでお申し込みを送る</a>
+      <p style="font-size:13px;">うまく開かないときは、お手数ですが <b>school@iob.bio</b> 宛に、お名前とご希望の決済方法をお送りください。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ C：締め（二項対立を超えて、共創へ） ============ -->
+<div class="closing">
+  <div class="wrap">
+    <p class="mincho">一人で完璧に仕上げてから、と思わなくていい。<br>
+    弱いところがあるまま、みんなで机に向かえばいい。<br><br>
+    ここで一度、自信をかたちにして、<br>
+    その先で、あなたの言葉でオーガニックを広げていく。<br><br>
+    <span class="slogan">「オーガニックが、あたりまえ。」な社会へ。</span><br>
+    その一歩を、仲間と。10月に始めましょう。</p>
+    <div class="actions">
+      <a class="primary" href="#apply">申し込みフォームへ</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  Institut für Organic Business GmbH<br>
+  お問い合わせ：school@iob.bio<br><br>
+  <a href="terms.html" target="_blank" rel="noopener">受講規約</a>　｜
+  <a href="privacy.html">プライバシーポリシー</a>　｜
+  <a href="tokushoho.html">特定商取引法に基づく表記</a><br><br>
+  Copyright ©2026 Institut für Organic Business GmbH. All Rights Reserved.
+</footer>
+
+<div id="stickyCta"><a href="#apply">仲間と、12月の合格へ ▶ 申し込む</a></div>
+
+<script>
+  // ── 申込先GAS（スプレッドシート「試験対策講座_申込管理」に紐づくウェブアプリ）──
+  // 🚨佳代子さん/なつこへ：ここに GAS のウェブアプリURL を貼る。貼るまでは送信できず、
+  //   フォームは「メールでお申し込み」に自動で切り替わる（申込が消えない安全策）。
+  //   コードを直したら「デプロイを管理 → 編集 → バージョン：新バージョン」で再デプロイ。
+  const GAS_URL = "https://script.google.com/macros/s/AKfycbzebRdA-kdzFIXAmkNGMDx-Hp20vm1jvcTn2J2KwFd-mrbvoRmf8Bxm6-NI8ZOM1hY0oA/exec"; // 申込管理GAS（os-alumni-2026/gas_code.gs）に統合・type:"試験対策講座"で振り分け（2026-10-03）
+
+  // ── 円換算（当日レートを取得。取れなければ概算にフォールバック）──
+  (function(){
+    var el = document.getElementById('jpy');
+    var FALLBACK = 168; // 1€ の概算（取得できないとき用・適宜更新）
+    function render(rate, approx){
+      var yen = Math.round(198 * rate / 100) * 100;
+      el.innerHTML = "（税込・付加価値税込み）　" + (approx ? "約" : "") + "¥" + yen.toLocaleString() + " 前後";
+    }
+    render(FALLBACK, true);
+    try{
+      fetch("https://open.er-api.com/v6/latest/EUR").then(function(r){return r.json();}).then(function(d){
+        if(d && d.rates && d.rates.JPY){ render(d.rates.JPY, true); }
+      }).catch(function(){});
+    }catch(e){}
+  })();
+
+  // ── 追従CTA ──
+  (function(){
+    var bar = document.getElementById('stickyCta');
+    var formSec = document.getElementById('applyForm');
+    if(!bar || !formSec) return;
+    document.body.classList.add('has-sticky');
+    function update(){
+      var past = window.scrollY > window.innerHeight * 0.9;
+      var atForm = formSec.getBoundingClientRect().top < window.innerHeight;
+      bar.classList.toggle('on', past && !atForm);
+    }
+    window.addEventListener('scroll', update, {passive:true});
+    window.addEventListener('resize', update);
+    update();
+  })();
+
+  // ── フォーム送信 ──
+  const form = document.getElementById('applyForm');
+  const btn = document.getElementById('submitBtn');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if(!document.getElementById('agree').checked){ return; }
+    btn.disabled = true;
+    btn.textContent = "送信中…";
+
+    const data = {
+      type: "試験対策講座",
+      name: form.name.value,
+      email: form.email.value,
+      plan: "オーガニック専門家認定試験 対策講座（8週間）（€198）",
+      payment: (form.querySelector('input[name=payment]:checked') || {}).value || "",
+      installment: (form.querySelector('input[name=installment]:checked') || {}).value || "",
+      monitorName: form.monitorName.value,
+      referrer: "",
+      message: form.message.value
+    };
+
+    // ── 保険：GAS_URLが未設定のときは「送信できたフリ」をせず、メール申込に切り替える ──
+    function showFallback(){
+      var lines = [
+        "お名前：" + data.name,
+        "メールアドレス：" + data.email,
+        "ご希望の決済方法：" + data.payment,
+        "お支払い回数：" + data.installment,
+        "ご質問・ご連絡事項：" + (data.message || "（なし）")
+      ].join("\n");
+      document.getElementById('fallbackMail').href =
+        "mailto:school@iob.bio"
+        + "?subject=" + encodeURIComponent("お申し込み（試験対策講座）" + data.name)
+        + "&body=" + encodeURIComponent("試験対策講座に申し込みます。\n\n" + lines + "\n");
+      form.style.display = "none";
+      var fb = document.getElementById('fallback');
+      fb.style.display = "block";
+      window.scrollTo({top: fb.offsetTop - 40, behavior:"smooth"});
+    }
+
+    if (!GAS_URL || GAS_URL.indexOf("PASTE_") === 0 || GAS_URL.indexOf("http") !== 0) {
+      showFallback();
+      return;
+    }
+
+    fetch(GAS_URL, {
+      method:"POST",
+      mode:"no-cors",
+      headers:{"Content-Type":"application/x-www-form-urlencoded;charset=utf-8"},
+      body: new URLSearchParams({ payload: JSON.stringify(data) })
+    }).then(function(){
+      form.style.display="none";
+      document.getElementById('thanks').style.display="block";
+      window.scrollTo({top:document.getElementById('thanks').offsetTop-40, behavior:"smooth"});
+    }).catch(function(){
+      showFallback();
+    });
+  });
+</script>
+
+<script>
+/* 締切カウントダウン：2026年10月14日(水)23:59 JST まで */
+(function(){
+  var END = Date.UTC(2026, 9, 14, 14, 59, 59); // 10/14 23:59:59 JST
+  var box = document.getElementById("countdown"), out = document.getElementById("cd-text");
+  var note = document.getElementById("deadlineNote");
+  if (!box || !out) return;
+  function tick(){
+    var left = END - Date.now();
+    if (left <= 0) {
+      box.style.display = "none";
+      if (note) note.innerHTML = "受付は終了しました。お問い合わせは school@iob.bio まで。";
+      return;
+    }
+    var d = Math.floor(left/86400000), h = Math.floor(left/3600000)%24, m = Math.floor(left/60000)%60, sec = Math.floor(left/1000)%60;
+    out.innerHTML = "受付終了まで " + (d > 0 ? "あと<b>" + d + "</b>日 " : "") + "<b>" + h + "</b>時間<b>" + m + "</b>分<b>" + sec + "</b>秒";
+    setTimeout(tick, 1000);
+  }
+  box.style.display = "block";
+  tick();
+})();
+</script>
+</body>
+</html>
