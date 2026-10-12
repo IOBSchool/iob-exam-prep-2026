@@ -75,15 +75,21 @@
   .reflect{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 16px 18px;}
   .reflect p{font-size:14px;margin-bottom:8px;color:var(--sub);text-align:left;}
   .reflect .btn{margin-top:12px;}
+  .choice-group{background:#fdf1ea;border:1px solid #f6d9c9;border-radius:16px;padding:14px 12px 14px;}
+  .question{display:flex;align-items:flex-start;gap:12px;background:var(--card);border:2px solid var(--point);border-radius:12px;padding:14px 14px;}
+  .q-badge{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--point);color:#fff;font-weight:700;font-size:18px;line-height:30px;text-align:center;font-family:"Noto Sans JP",sans-serif;}
+  .question p{margin:0;text-align:left;font-family:"Zen Old Mincho",serif;font-weight:700;font-size:17px;line-height:1.6;}
+  .q-note{margin:10px 4px 2px;font-size:13px;color:var(--sub);text-align:left;}
   .entry{
-    background:var(--card);border:1px solid var(--line);border-radius:12px;
-    padding:0 0 18px;margin-top:14px;overflow:hidden;
+    background:var(--card);border:1.5px solid #e9c9b6;border-radius:12px;
+    padding:0 0 18px;margin-top:10px;overflow:hidden;
   }
   .entry h3{
     font-family:"Zen Old Mincho",serif;font-weight:700;font-size:18px;
     text-align:left;margin:0 0 14px;padding:11px 16px;
     background:#fdece3;color:var(--point);border-bottom:1px solid #f6d9c9;
   }
+  .entry h3::before{content:"";display:inline-block;width:18px;height:18px;border:2px solid var(--point);border-radius:50%;background:#fff;margin-right:10px;vertical-align:-3px;}
   .entry p{margin:0 16px 10px;font-size:14.5px;text-align:left;}
   .entry p:first-of-type{font-weight:700;font-size:15.5px;color:var(--ink);}
   .entry .btn{width:auto;max-width:none;margin:16px 16px 0;}
@@ -93,8 +99,14 @@
   .note-f .note-f-mail a{color:var(--point);font-weight:700;}
   .qa .qa-fix{background:var(--bg);border-radius:8px;padding:10px 12px;font-size:14px;}
   .apply-fix{margin-top:8px;}
-  .small{margin-top:16px;font-size:14px;color:var(--sub);}
-  .small p{margin-bottom:4px;}
+  .warm{margin:18px 0 0;position:relative;border-radius:14px;overflow:hidden;line-height:0;}
+  .warm img{display:block;width:100%;height:auto;}
+  .warm figcaption{
+    position:absolute;left:0;right:0;bottom:0;padding:44px 16px 16px;line-height:1.5;
+    font-family:"Zen Old Mincho",serif;font-weight:700;font-size:19px;color:#fff;text-align:center;
+    background:linear-gradient(to bottom, rgba(60,36,22,0), rgba(60,36,22,.78));
+    text-shadow:0 1px 6px rgba(0,0,0,.35);
+  }
   .apply-deadline{font-size:14px;font-weight:700;color:var(--ink);margin-top:14px;padding:10px 12px;background:var(--card);border:1px solid var(--line);border-radius:10px;}
   .apply-fix{font-weight:500;color:var(--ink);text-align:left;background:#fff6ef;border:0;border-left:4px solid var(--point);border-radius:6px;}
   .qa{
@@ -161,10 +173,9 @@
     </section>
 
     <section class="block">
-      <div class="lead">
-<p>動画を見終えた今の気持ちで、下の3つから一番近いものを選んでください。</p>
-<p>選んでも、お申し込みにはなりません。</p>
-      </div>
+      <div class="choice-group">
+        <div class="question"><span class="q-badge" aria-hidden="true">?</span><p>動画を見終えた今の気持ちで、下の3つから一番近いものを選んでください。</p></div>
+        <p class="q-note">選んでも、お申し込みにはなりません。</p>
 <section class="entry entry-primary">
 <h3>12月の試験を受ける</h3>
 <p>12月の試験に向けて、集中して取り組みたい方へ。</p>
@@ -186,9 +197,11 @@
 <p>何を聞くか決まっていなくても、10分、無料で私と話せます。</p>
 <a class="btn btn-quiet" href="https://timerex.net/s/organiclifeingermany_ae43/1e9aa764" target="_blank" rel="noopener" data-ev="click_consult">スクール生限定<br>レムケなつことの<br>10分相談（無料）を見る</a>
 </section>
-      <div class="small">
-<p>今の気持ちに合うものだけ、見てくださいね。</p>
       </div>
+      <figure class="warm">
+        <img src="../img/tour_nagano.jpg" alt="仲間たちの集合写真" loading="lazy">
+        <figcaption>今の気持ちに合うものだけ、見てくださいね。</figcaption>
+      </figure>
       <!-- NEW（横山確認前）：本人指示「申込締切は事実として1回だけ」 -->
       <p class="apply-deadline">8週間 試験対策講座とDaily Lettersのお申し込み受付は、10/14（水）23:59 JSTまでです。</p>
       <p class="apply-deadline apply-fix"><!-- 横山案E2（本人OK待ち） -->講座の中で「16日までに」とお話しした箇所がありますが、こちらの日付が正しい受付期限です。</p>
@@ -224,9 +237,6 @@
 <p>日本とEUの今を、まとめにも載せています。</p>
 <p class="qa-link"><a href="https://docs.google.com/document/d/1J1AcUIgkdWTOSfe16LcvdujdUsggr5_8FD71TiuR-B8/edit" target="_blank" rel="noopener" data-ev="click_q7_summary">▶︎まとめを見る</a></p>
 </div></details>
-      <div class="pending">
-<p>当日いただいたご質問で、追加で確認しているものがあれば、10月12日（月）日本時間21時までにこの下に追記します。</p>
-      </div>
     </section>
   </div>
 
