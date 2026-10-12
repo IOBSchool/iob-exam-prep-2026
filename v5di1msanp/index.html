@@ -25,26 +25,28 @@
   body{
     font-family:"Noto Sans JP",sans-serif;
     color:var(--ink);
-    line-height:1.95;
-    font-size:16px;
+    line-height:1.8;
+    font-size:15.5px;
     -webkit-font-smoothing:antialiased;
+    word-break:auto-phrase;line-break:strict;
     min-height:100vh;
     display:flex;flex-direction:column;
   }
-  .wrap{width:100%;max-width:640px;margin:0 auto;padding:0 20px;}
+  .wrap{width:100%;max-width:600px;margin:0 auto;padding:0 18px;}
   main{flex:1;}
-  .logo{display:block;width:84px;height:auto;margin:48px auto 28px;}
+  .logo{display:block;width:72px;height:auto;margin:26px auto 14px;}
   h1{
     font-family:"Zen Old Mincho",serif;font-weight:700;
-    font-size:28px;line-height:1.55;text-align:center;
+    font-size:25px;line-height:1.5;text-align:center;
   }
-  .rule{width:44px;height:3px;background:var(--point);border-radius:2px;margin:20px auto 28px;}
-  p{margin-bottom:18px;text-align:center;}
+  .rule{width:40px;height:3px;background:var(--point);border-radius:2px;margin:12px auto 16px;}
+  p{margin-bottom:10px;text-align:center;text-wrap:balance;}
+  .lead p{margin-bottom:8px;font-size:14.5px;color:var(--ink);}
   .until{
-    display:block;width:fit-content;margin:6px auto 30px;
-    padding:7px 18px;border-radius:999px;
+    display:block;width:fit-content;margin:12px auto 18px;
+    padding:6px 16px;border-radius:999px;
     background:var(--card);border:1px solid var(--line);
-    font-size:14.5px;font-weight:500;color:var(--ink);
+    font-size:14px;font-weight:700;color:var(--ink);
   }
   .video{
     position:relative;width:100%;aspect-ratio:16/9;background:#2b1d14;
@@ -53,72 +55,77 @@
   .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
   .video-empty{display:flex;align-items:center;justify-content:center;}
   .video-empty p{color:#d9c9b8;font-size:14px;margin:0;}
-  section.block{margin-top:44px;padding-top:34px;border-top:1px solid var(--line);}
-  .after-video{margin-top:30px;}
+  section.block{margin-top:30px;padding-top:24px;border-top:1px solid var(--line);}
+  .after-video{margin-top:16px;}
+  .after-video p{font-size:14.5px;color:var(--sub);}
   h2{
-    font-family:"Zen Old Mincho",serif;font-weight:700;font-size:22px;
-    line-height:1.6;text-align:center;margin-bottom:18px;
+    font-family:"Zen Old Mincho",serif;font-weight:700;font-size:20px;
+    line-height:1.55;text-align:center;margin-bottom:12px;
   }
-  .lead p{margin-bottom:14px;}
-  .quote{font-weight:500;}
   .btn{
-    display:block;width:100%;max-width:420px;margin:22px auto 0;
+    display:block;width:100%;max-width:420px;margin:16px auto 0;
     text-align:center;text-decoration:none;border-radius:10px;
-    padding:15px 18px;font-weight:700;font-size:16px;line-height:1.6;
+    padding:13px 16px;font-weight:700;font-size:15.5px;line-height:1.55;
   }
   .btn-primary{background:var(--point);color:#fff;}
   .btn-primary:hover{filter:brightness(.95);}
-  .btn-quiet{
-    background:transparent;color:var(--ink);border:1.5px solid var(--ink);
-  }
+  .btn-quiet{background:transparent;color:var(--ink);border:1.5px solid var(--ink);}
   .btn-quiet:hover{background:rgba(85,55,39,.05);}
-  .btn-form{background:var(--card);color:var(--ink);border:1px solid var(--sub);font-weight:500;}
+  .btn-form{background:var(--card);color:var(--ink);border:1.5px solid var(--sub);font-weight:700;}
+  .reflect{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 16px 18px;}
+  .reflect p{font-size:14px;margin-bottom:8px;color:var(--sub);text-align:left;}
+  .reflect .btn{margin-top:12px;}
   .entry{
     background:var(--card);border:1px solid var(--line);border-radius:12px;
-    padding:26px 22px 28px;margin-top:18px;
+    padding:0 0 18px;margin-top:14px;overflow:hidden;
   }
   .entry h3{
-    font-family:"Zen Old Mincho",serif;font-weight:700;font-size:19px;
-    text-align:center;margin-bottom:12px;
+    font-family:"Zen Old Mincho",serif;font-weight:700;font-size:18px;
+    text-align:left;margin:0 0 14px;padding:11px 16px;
+    background:#fdece3;color:var(--point);border-bottom:1px solid #f6d9c9;
   }
-  .entry p{margin-bottom:14px;font-size:15.5px;}
-  .note-f{margin:6px 0 4px;padding:12px 16px;background:var(--bg);border-radius:8px;}
-  .note-f p{font-size:14.5px;margin-bottom:6px;}
+  .entry p{margin:0 16px 10px;font-size:14.5px;text-align:left;}
+  .entry p:first-of-type{font-weight:700;font-size:15.5px;color:var(--ink);}
+  .entry .btn{width:auto;max-width:none;margin:16px 16px 0;}
+  .note-f{margin:12px 16px 4px;padding:10px 14px;background:var(--bg);border-radius:8px;}
+  .note-f p{font-size:13.5px;margin:0 0 4px;text-align:left;}
   .note-f .note-f-h{font-weight:700;}
-  .note-f .note-f-mail a{color:var(--point);font-weight:500;}
-  .qa .qa-fix{background:var(--bg);border-radius:8px;padding:10px 14px;font-size:15px;}
-  .apply-fix{margin-top:12px;}
-  .small{margin-top:26px;font-size:14.5px;color:var(--sub);}
-  .apply-deadline{font-size:14.5px;color:var(--ink);margin-top:18px;}
+  .note-f .note-f-mail a{color:var(--point);font-weight:700;}
+  .qa .qa-fix{background:var(--bg);border-radius:8px;padding:10px 12px;font-size:14px;}
+  .apply-fix{margin-top:8px;}
+  .small{margin-top:16px;font-size:14px;color:var(--sub);}
+  .small p{margin-bottom:4px;}
+  .apply-deadline{font-size:14px;font-weight:700;color:var(--ink);margin-top:14px;padding:10px 12px;background:var(--card);border:1px solid var(--line);border-radius:10px;}
+  .apply-fix{font-weight:500;color:var(--ink);text-align:left;background:#fff6ef;border:0;border-left:4px solid var(--point);border-radius:6px;}
   .qa{
     background:var(--card);border:1px solid var(--line);border-radius:12px;
-    padding:22px 22px 8px;margin-top:16px;
+    margin-top:10px;overflow:hidden;
   }
-  .qa h3{
-    font-family:"Noto Sans JP",sans-serif;font-weight:700;font-size:16px;
-    line-height:1.7;margin-bottom:10px;
-    padding-left:14px;border-left:4px solid var(--point);
+  .qa summary{
+    list-style:none;cursor:pointer;position:relative;
+    padding:14px 44px 14px 16px;font-weight:700;font-size:15px;line-height:1.55;
   }
-  .qa p{text-align:left;font-size:15.5px;margin-bottom:16px;}
+  .qa summary::-webkit-details-marker{display:none;}
+  .qa summary::after{
+    content:"+";position:absolute;right:16px;top:50%;transform:translateY(-50%);
+    font-size:22px;font-weight:400;color:var(--point);line-height:1;
+  }
+  .qa[open] summary::after{content:"−";}
+  .qa[open] summary{border-bottom:1px solid var(--line);}
+  .qa-body{padding:14px 16px 6px;}
+  .qa-body p{text-align:left;font-size:14.5px;margin-bottom:12px;}
   .qa-link{text-align:left;}
-  .qa-link a{color:var(--point);font-weight:500;}
-  .pending{
-    margin-top:30px;border:1px dashed var(--sub);border-radius:12px;
-    padding:24px 22px 8px;
-  }
-  .qa-more{margin-top:30px;padding-top:6px;}
-  .pending p{margin-bottom:12px;}
-  .pending h3{
-    font-family:"Zen Old Mincho",serif;font-weight:700;font-size:19px;
-    text-align:center;margin-bottom:12px;
-  }
+  .qa-link a{color:var(--point);font-weight:700;}
+  .qa-more{margin-top:22px;padding:16px 16px 18px;background:var(--card);border:1px solid var(--line);border-radius:12px;}
+  .qa-more p{font-size:14px;margin-bottom:8px;text-align:left;}
+  .pending{margin-top:14px;border:1px dashed var(--sub);border-radius:12px;padding:12px 14px 4px;}
+  .pending p{margin-bottom:6px;font-size:13.5px;color:var(--sub);text-align:left;}
   #closed{display:none;padding:70px 0 90px;}
   .is-closed #open{display:none;}
   .is-closed #closed{display:block;}
-  footer{padding:34px 0 30px;text-align:center;font-size:11.5px;color:var(--sub);}
-  @media(max-width:480px){
-    h1{font-size:24px;}
-    h2{font-size:20px;}
+  footer{padding:26px 0 24px;text-align:center;font-size:11.5px;color:var(--sub);}
+  @media(min-width:700px){
+    h1{font-size:28px;}
     .logo{margin-top:36px;}
   }
 </style>
@@ -132,105 +139,99 @@
     <h1>10月11日 無料講座アーカイブ</h1>
     <div class="rule"></div>
     <div class="lead">
-<p>10月11日の無料講座を<br>こちらからご覧いただけます。</p>
-<p>講座の教材をもとにした練習問題で、<br>認証と、<br>遺伝子組み換え・ゲノム編集を、</p>
-<p>一緒に確認した講座です。</p>
+<p>10月11日の無料講座をこちらからご覧いただけます。</p>
+<p>講座の教材をもとにした練習問題で、認証と、遺伝子組み換え・ゲノム編集を、一緒に確認した講座です。</p>
     </div>
     <span class="until">視聴は10/14（水）23:59 JSTまで</span>
 
     <div class="video" id="video-box"><iframe src="https://www.youtube-nocookie.com/embed/qIS-9fhwMrY?rel=0&modestbranding=1" allow="accelerometer; encrypted-media; picture-in-picture; fullscreen" allowfullscreen title="10月11日 無料講座アーカイブ"></iframe></div>
 
     <div class="after-video">
-<p>最後までご覧くださり、<br>ありがとうございました。</p>
+<p>最後までご覧くださり、ありがとうございました。</p>
     </div>
 
     <section class="block">
-<p>動画をご覧になったあと、<br>よければ今回の内容を</p>
-<p>一度振り返ってみてください。</p>
-<p>「どこは分かっていて、<br>どこはまだ曖昧か」</p>
-<p>「自分は、どういうときなら<br>学びや実践を続けやすいか」</p>
+      <div class="reflect">
+<p>動画をご覧になったあと、よければ今回の内容を一度振り返ってみてください。</p>
+<p>「どこは分かっていて、どこはまだ曖昧か」</p>
+<p>「自分は、どういうときなら学びや実践を続けやすいか」</p>
 <p>を整理する振り返りです。</p>
-<p>5〜7分くらいを目安にしています。<br>回答は匿名です。</p>
+<p>5〜7分くらいを目安にしています。回答は匿名です。</p>
       <a class="btn btn-form" href="https://docs.google.com/forms/d/e/1FAIpQLSeUt6niWheDGP5YPL0-CRrRv8-mpTwh3mml315wzfRksOITrQ/viewform?usp=pp_url&amp;entry.1986525472=%E3%82%A2%E3%83%BC%E3%82%AB%E3%82%A4%E3%83%96%E3%81%A7%E8%A6%96%E8%81%B4" target="_blank" rel="noopener" data-ev="click_form">▶ 振り返りはこちら</a>
+      </div>
     </section>
 
     <section class="block">
       <div class="lead">
-<p>動画を見終えた<br>今の気持ちで、</p>
-<p>下の3つから<br>一番近いものを選んでください。</p>
-<p>選んでも、<br>お申し込みにはなりません。</p>
+<p>動画を見終えた今の気持ちで、下の3つから一番近いものを選んでください。</p>
+<p>選んでも、お申し込みにはなりません。</p>
       </div>
 <section class="entry entry-primary">
 <h3>12月の試験を受ける</h3>
-<p>12月の試験に向けて、<br>集中して取り組みたい方へ。</p>
-<p>10月19日から8週間、<br>毎週集まりながら</p>
-<p>一緒に準備する<br>試験対策講座があります。</p>
-<p>専門家コース本編は<br>見られません。</p>
+<p>12月の試験に向けて、集中して取り組みたい方へ。</p>
+<p>10月19日から8週間、毎週集まりながら一緒に準備する試験対策講座があります。</p>
+<p>専門家コース本編は見られません。</p>
 <a class="btn btn-primary" href="https://iobschool.github.io/iob-exam-prep-2026/" target="_blank" rel="noopener" data-ev="click_8weeks">8週間 試験対策講座を見る</a>
 </section>
 <section class="entry entry-primary">
 <h3>今回は受けない</h3>
-<p>専門家コースの<br>2年間の視聴期間が終わっていて、<br>学びを続けたい方へ。</p>
-<p>今回は12月の試験を受けず、</p>
-<p>この先12ヶ月、<br>日常の中で</p>
-<p>学びを続ける<br>Daily Lettersがあります。</p>
-<p>受講中の12ヶ月は<br>専門家コース本編を見られ、<br>認定資格対策クイズもあります。</p>
-<div class="note-f"><!-- 横山案F（本人OK・宛先待ち） --><p class="note-f-h">コスメ専門家コースを受けた方へ</p><p>コスメコース向けは、11月中から<br>受けられるように準備しています。</p><p>ご希望の方は、メールで一言お知らせください。</p><p class="note-f-mail"><a href="mailto:school@iob.bio" data-ev="click_cosme_mail">school@iob.bio</a></p></div>
+<p>専門家コースの2年間の視聴期間が終わっていて、学びを続けたい方へ。</p>
+<p>今回は12月の試験を受けず、この先12ヶ月、日常の中で学びを続けるDaily Lettersがあります。</p>
+<p>受講中の12ヶ月は専門家コース本編を見られ、認定資格対策クイズもあります。</p>
+<div class="note-f"><!-- 横山案F（本人OK・宛先待ち） --><p class="note-f-h">コスメ専門家コースを受けた方へ</p><p>コスメコース向けは、11月中から受けられるように準備しています。</p><p>ご希望の方は、メールで一言お知らせください。</p><p class="note-f-mail"><a href="mailto:school@iob.bio" data-ev="click_cosme_mail">school@iob.bio</a></p></div>
 <a class="btn btn-primary" href="https://iobschool.github.io/iob-daily-letters-2026/" target="_blank" rel="noopener" data-ev="click_dl">Daily Lettersを見る</a>
 </section>
 <section class="entry entry-quiet">
 <h3>まだ決めていない</h3>
-<p>まだ決めていないまま、<br>10分の相談を使えます。</p>
-<p>何を聞くか<br>決まっていなくても、</p>
-<p>10分、無料で<br>私と話せます。</p>
+<p>まだ決めていないまま、10分の相談を使えます。</p>
+<p>何を聞くか決まっていなくても、10分、無料で私と話せます。</p>
 <a class="btn btn-quiet" href="https://timerex.net/s/organiclifeingermany_ae43/1e9aa764" target="_blank" rel="noopener" data-ev="click_consult">スクール生限定<br>レムケなつことの<br>10分相談（無料）を見る</a>
 </section>
       <div class="small">
-<p>今の気持ちに合うものだけ、<br>見てくださいね。</p>
+<p>今の気持ちに合うものだけ、見てくださいね。</p>
       </div>
       <!-- NEW（横山確認前）：本人指示「申込締切は事実として1回だけ」 -->
-      <p class="apply-deadline">8週間 試験対策講座とDaily Lettersの<br>お申し込み受付は、<br>10/14（水）23:59 JSTまでです。</p>
-      <p class="apply-deadline apply-fix"><!-- 横山案E2（本人OK待ち） -->講座の中で「16日までに」と<br>お話しした箇所がありますが、<br>こちらの日付が正しい受付期限です。</p>
+      <p class="apply-deadline">8週間 試験対策講座とDaily Lettersのお申し込み受付は、10/14（水）23:59 JSTまでです。</p>
+      <p class="apply-deadline apply-fix"><!-- 横山案E2（本人OK待ち） -->講座の中で「16日までに」とお話しした箇所がありますが、こちらの日付が正しい受付期限です。</p>
     </section>
 
     <section class="block">
-      <h2>申込のときにいただいた<br>質問への回答</h2>
+      <h2>申込のときにいただいた質問への回答</h2>
       <div class="lead">
-<p>10月11日の講座で<br>いただいたご質問に、</p>
-<p>その場でお答えした内容を<br>そのまま載せています。</p>
-<p>文中の「今日」は、<br>10月11日のことです。</p>
+<p>10月11日の講座でいただいたご質問に、その場でお答えした内容をそのまま載せています。</p>
+<p>文中の「今日」は、10月11日のことです。</p>
       </div>
-<article class="qa"><h3>試験と勉強の進め方について</h3>
+<details class="qa"><summary>試験と勉強の進め方について</summary><div class="qa-body">
 <p>今日は、試験の形式や採点の仕組みを説明する会ではありません。今日やったように、問いを見て、分かっているところと曖昧なところを分ける。そして、自分の言葉で説明してみる。まずは、このやり方で自分の学び直す場所を見つけてみてください。次の認定試験は、12月14日から20日です。受験申込は、11月30日までです。</p>
-</article>
-<article class="qa"><h3>過去の試験で<br>間違えたところについて</h3>
+</div></details>
+<details class="qa"><summary>過去の試験で間違えたところについて</summary><div class="qa-body">
 <p>自分が過去に受けた試験で、どの問題を間違えていたのかを、この講座で特定することはできません。今日は、個別の誤答箇所を探すのではなく、練習問題を使って、自分が説明できるところと、まだ曖昧なところを自分で見つける形で進めています。</p>
-</article>
-<article class="qa"><h3>受講しているコースについて</h3>
+</div></details>
+<details class="qa"><summary>受講しているコースについて</summary><div class="qa-body">
 <p>今日の無料講座で、対象としてご案内しているのは、オーガニック専門家コースと、コスメ専門家コースを受けた方です。ご自身が受けたコースが、このどちらかに当てはまるかを確認してください。もし、どちらに当たるのか分からない場合や、どちらにも当てはまらない場合は、一度ご相談ください。また、今日の無料講座に参加できるかどうかと、このあとご案内している有料講座の対象かどうかは、別に確認します。</p>
-</article>
-<article class="qa"><h3>受講から時間が<br>経っている場合</h3>
+</div></details>
+<details class="qa"><summary>受講から時間が経っている場合</summary><div class="qa-body">
 <p>大丈夫です。今日は、久しぶりの方も含めて、予習なしで参加できる形で進めています。今日書いた、自分の言葉での説明を見て、思い出せたところと、もう一度確かめたいところを、まず1つずつ見つけてみてください。</p>
-</article>
-<article class="qa"><h3>確認のために<br>学び直したい場合</h3>
+</div></details>
+<details class="qa"><summary>確認のために学び直したい場合</summary><div class="qa-body">
 <p>今日の使い方が、そのまま使えます。問いを見て、分かるところと、曖昧なところを分ける。そのあと、自分の言葉で1〜2行説明してみる。うまく言葉にならないところがあれば、そこが、もう一度確かめる場所です。</p>
-</article>
-<article class="qa"><h3>最近、勉強が<br>疎かになっている場合</h3>
+</div></details>
+<details class="qa"><summary>最近、勉強が疎かになっている場合</summary><div class="qa-body">
 <p>全部を最初からやり直そうとしなくて大丈夫です。今日やった2つのテーマのように、まず1つ問いを置いて、自分が説明できるところと、まだ曖昧なところを分けてみてください。今日ノートに書いたところから始めても大丈夫です。</p>
-</article>
-<article class="qa"><h3>世界の遺伝子組み換え<br>表示について</h3>
+</div></details>
+<details class="qa"><summary>世界の遺伝子組み換え表示について</summary><div class="qa-body">
 <p class="qa-fix"><!-- 横山案E1（本人OK待ち） -->講座の中で「来年から」とお話ししましたが、確認したところ、新しい規則が実際に適用されるのは2028年7月17日からです。</p>
 <p>ここは、国や地域によって扱いが違います。ここからは、講座の教材で確認した範囲とは別に、今回追加で調べた範囲でお答えします。調べた範囲では、まず日本では、遺伝子組み換え食品のうち、対象となる食品について表示のルールがあります。「遺伝子組換えでない」と書ける条件も、2023年4月から変わっています。分別して管理したうえで、遺伝子組換え農産物の混入がないと確認できた原料に限って、「遺伝子組換えでない」と表示できます。一方、日本では、外来遺伝子が残らないゲノム編集食品は遺伝子組み換えには該当せず、義務表示の対象外です。ただし、事前に相談し、届出をして、公表する仕組みがあります。ドイツを含むEUでは、調べた範囲では、現時点ではゲノム編集もGMOのルールの対象です。ゲノム編集だけから作られたもので、EUで食品や飼料として販売承認された作物や動物は、現時点ではまだありません。新しい規則は2026年7月に発効していますが、実際に適用が始まるのは2028年7月17日です。ですので、今の段階で、「EUではゲノム編集食品が表示なしで、すでに普通に流通している」という整理ではありません。世界各国すべてについては、今日はここで断定せず、日本とEUについて、今回調べて確認できた範囲でお答えしました。</p>
-<p>日本とEUの今を、<br>まとめにも載せています。</p>
+<p>日本とEUの今を、まとめにも載せています。</p>
 <p class="qa-link"><a href="https://docs.google.com/document/d/1J1AcUIgkdWTOSfe16LcvdujdUsggr5_8FD71TiuR-B8/edit" target="_blank" rel="noopener" data-ev="click_q7_summary">▶︎まとめを見る</a></p>
-</article>
+</div></details>
       <div class="qa-more">
-<p>今回、事前にいただいていたご質問への回答は<br>こちらにまとめました。</p>
-<p>これまで受講生のみなさんからいただいた<br>Q&amp;Aも、こちらからご覧いただけます。</p>
+<p>今回、事前にいただいていたご質問への回答はこちらにまとめました。</p>
+<p>これまで受講生のみなさんからいただいたQ&amp;Aも、こちらからご覧いただけます。</p>
         <a class="btn btn-form" href="https://iob.bio/organicexpertcourse/qa-students.html" target="_blank" rel="noopener" data-ev="click_qa_collection">▶ 受講生みんなのQ&amp;Aを見る</a>
       </div>
       <div class="pending">
-<p>当日いただいたご質問で、<br>追加で確認しているものがあれば、<br>10月12日（月）日本時間21時までに<br>この下に追記します。</p>
+<p>当日いただいたご質問で、追加で確認しているものがあれば、10月12日（月）日本時間21時までにこの下に追記します。</p>
       </div>
     </section>
   </div>
@@ -238,8 +239,8 @@
   <div id="closed">
     <h1>今回のご案内は終了しました。</h1>
     <div class="rule"></div>
-<p>アーカイブの公開と、<br>今回の受付は終了しています。</p>
-<p>ご覧くださり、<br>ありがとうございました。</p>
+<p>アーカイブの公開と、今回の受付は終了しています。</p>
+<p>ご覧くださり、ありがとうございました。</p>
   </div>
 </div>
 </main>
