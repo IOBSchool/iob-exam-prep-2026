@@ -634,6 +634,35 @@
       return;
     }
 
+    // Stripe・PayPal：保存の完了（GASの応答）を待たずに、すぐお支払いのページへ移動する（2026-10-13 本人指示「今すぐ」）。
+    // 申込データは keepalive 付きで送る＝ページを離れても送信は続く。
+    var _quick = payLinkFor_(data);
+    if (_quick) {
+      var _body = new URLSearchParams({ payload: JSON.stringify(data) });
+      var _sent = false;
+      try {
+        fetch(GAS_URL, {
+          method:"POST",
+          mode:"no-cors",
+          keepalive:true,
+          headers:{"Content-Type":"application/x-www-form-urlencoded;charset=utf-8"},
+          body: _body
+        });
+        _sent = true;
+      } catch(_e) {}
+      if (!_sent && navigator.sendBeacon) {
+        try { navigator.sendBeacon(GAS_URL, new Blob([_body.toString()], {type:"application/x-www-form-urlencoded;charset=utf-8"})); } catch(_e2) {}
+      }
+      form.style.display = "none";
+      var _pr0 = document.getElementById('payRedirect');
+      document.getElementById('payLink').href = _quick;
+      _pr0.style.display = "block";
+      window.scrollTo({top:_pr0.offsetTop-40, behavior:"smooth"});
+      setTimeout(function(){ window.location.href = _quick; }, 700);
+      return;
+    }
+
+    // 銀行振込：保存の完了を待って、ご案内の完了画面を出す
     fetch(GAS_URL, {
       method:"POST",
       mode:"no-cors",
