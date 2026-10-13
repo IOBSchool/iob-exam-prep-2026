@@ -152,6 +152,11 @@
   .submit{width:100%;background:var(--point);color:#fff;border:none;border-radius:12px;padding:17px;font-size:17px;font-weight:700;font-family:"Zen Old Mincho",serif;cursor:pointer;margin-top:6px;}
   .submit:disabled{opacity:.6;}
   .form-note{text-align:center;font-size:12.5px;color:var(--sub);margin-top:12px;line-height:1.7;}
+  .monitor-note{margin-top:16px;padding:14px 16px;border:1px solid var(--line);border-radius:10px;background:#fff;text-align:left;font-size:13.5px;line-height:1.85;}
+  .monitor-note .monitor-title{font-weight:700;margin-bottom:6px;}
+  .monitor-note p{margin:0 0 8px;}
+  .monitor-note p:last-child{margin-bottom:0;}
+  .monitor-line{font-size:13.5px;line-height:1.85;margin:0 0 16px;text-align:left;}
   #thanks,#fallback,#payRedirect{display:none;text-align:center;padding:10px 0;}
   #thanks .mincho,#fallback .mincho,#payRedirect .mincho{font-size:20px;font-weight:700;margin-bottom:14px;color:var(--point);}
   .next-steps{list-style:none;text-align:left;margin-top:16px;}
@@ -365,6 +370,12 @@
       </div>
       <div class="price-eur"><small>€</small><span class="js-price">198</span></div>
       <div class="price-jpy js-tax">（日本の消費税10%込み）</div>
+      <div class="monitor-note">
+        <div class="monitor-title">今回は、モニター価格でのご案内です</div>
+        <p>今回は、参加するみなさんと一緒につくり上げていく形で、この価格でご案内しています。</p>
+        <p>次回の開催は、まだ決まっていません。<br>今回で終了する可能性もあります。</p>
+        <p>また、次回開催する場合も、今回と同じ価格でご案内できる保証はありません。</p>
+      </div>
       <div class="price-note">
         すでにオーガニック専門家コースを学んだ、あなたのための価格です。<br>
         12月の認定試験に向けて、8週間かけて準備する講座です。
@@ -398,6 +409,7 @@
 <section id="apply">
   <div class="wrap">
     <h2 class="sec-title">お申し込み</h2>
+    <p class="monitor-line">今回はモニター価格でのご案内です。<br>次回の開催や、次回も同じ価格になることは決まっていません。内容をご確認のうえ、今の自分に必要かどうかでお申し込みください。</p>
     <p style="margin-bottom:20px;">難しいことは、始まってから一緒にやります。<br>いまは、<span class="hl">「やる」と決めて、名前とメールを書くだけ</span>で大丈夫です。</p>
 
     <form id="applyForm">
