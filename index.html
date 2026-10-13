@@ -152,8 +152,8 @@
   .submit{width:100%;background:var(--point);color:#fff;border:none;border-radius:12px;padding:17px;font-size:17px;font-weight:700;font-family:"Zen Old Mincho",serif;cursor:pointer;margin-top:6px;}
   .submit:disabled{opacity:.6;}
   .form-note{text-align:center;font-size:12.5px;color:var(--sub);margin-top:12px;line-height:1.7;}
-  #thanks,#fallback{display:none;text-align:center;padding:10px 0;}
-  #thanks .mincho,#fallback .mincho{font-size:20px;font-weight:700;margin-bottom:14px;color:var(--point);}
+  #thanks,#fallback,#payRedirect{display:none;text-align:center;padding:10px 0;}
+  #thanks .mincho,#fallback .mincho,#payRedirect .mincho{font-size:20px;font-weight:700;margin-bottom:14px;color:var(--point);}
   .next-steps{list-style:none;text-align:left;margin-top:16px;}
   .next-steps li{padding:12px 0 12px 24px;position:relative;font-size:14px;border-bottom:1px dashed var(--line);line-height:1.75;}
   .next-steps li::before{content:"→";position:absolute;left:0;color:var(--point);font-weight:700;}
@@ -373,8 +373,8 @@
         <tr><th>Stripe／PayPal</th><td>一括／2回分割（<span class="js-half">€99</span>×2・手数料なし）</td></tr>
         <tr><th>銀行振込<br>（日本・ドイツ）</th><td>一括のみ</td></tr>
       </table>
-      <p class="price-note">お支払いのリンクは、フォーム送信後の自動返信メールでご案内します。<br>
-      <b>お支払いは、お申し込みから3日以内にお願いします。</b></p>
+      <p class="price-note">Stripe・PayPalをお選びの方は、フォームを送信すると、そのままお支払いのページに移動します。<br>
+      <b>お支払いの完了をもって、お申し込みが確定します。</b><br>銀行振込の方は、自動返信メールにてご案内します（お支払いは、お申し込みから3日以内にお願いします）。</p>
     </div>
     <div style="text-align:center;margin-top:22px;"><a href="#apply" class="submit" style="display:inline-block;width:auto;padding:15px 40px;text-decoration:none;">申し込みフォームへ</a></div>
   </div>
@@ -455,12 +455,19 @@
         </div>
       </div>
       <button type="submit" class="submit" id="submitBtn">この内容で申し込む</button>
-      <div class="form-note">送信後、自動返信メールにて<br>お支払い方法のご案内をお送りします。</div>
+      <div class="form-note">送信後、そのままお支払いのページ（Stripe・PayPal）に移動します。<br>お支払いの完了をもって、お申し込みが確定します。<br>銀行振込の方は、自動返信メールにてご案内します。</div>
     </form>
+
+    <div id="payRedirect">
+      <div class="mincho">お申し込みを受け付けました。</div>
+      <p>お支払いのページに移動します。<br><b>お支払いの完了をもって、お申し込みが確定します。</b></p>
+      <p style="margin-top:18px;"><a id="payLink" class="fallback-btn" href="#">移動しない場合は、こちらを押してください</a></p>
+      <p style="font-size:13px;margin-top:14px;">お支払いのご案内は、自動返信メールでもお送りします。</p>
+    </div>
 
     <div id="thanks">
       <div class="mincho">お申し込みありがとうございます。</div>
-      <p>お支払いのご案内を、ご登録のメールアドレス宛にお送りします。<br>
+      <p>お支払いのご案内を、ご登録のメールアドレス宛にお送りします。<br><b>お振り込みの確認をもって、お申し込みが確定します。</b><br>
       混み合っているときは、お届けまでに最大で翌日までかかることがあります。<br>
       届かないときは school@iob.bio までご連絡ください。</p>
       <p style="margin-top:20px;font-weight:700;">始まるまでに、やっておいてほしいことが2つあります。</p>
@@ -552,6 +559,25 @@
   // ── フォーム送信 ──
   const form = document.getElementById('applyForm');
   const btn = document.getElementById('submitBtn');
+    // ── 申込を送ったら、Stripe／PayPal はそのままお支払いのページへ移動する（2026-10-13 本人ルール）──
+  var PAY_LINKS = {
+    "日本在住": {
+      STRIPE: { "一括": "https://buy.stripe.com/fZu5kE92Hfn6bGhen91kA16", "2回分割": "https://buy.stripe.com/3cI00k0wb5Mw11D6UH1kA18" },
+      PAYPAL: { "一括": "https://www.paypal.com/ncp/payment/5R349YL2MH3ES", "2回分割": "https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-98B30671C3098160PNK6PD3Y" }
+    },
+    "欧州在住": {
+      STRIPE: { "一括": "https://buy.stripe.com/8x27sMceT5MwaCd3Iv1kA19", "2回分割": "https://buy.stripe.com/00w4gA92H8YIfWxfrd1kA17" },
+      PAYPAL: { "一括": "https://www.paypal.com/ncp/payment/GG5XPA5T4MS88", "2回分割": "https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-19C23092YR551390FNK6PGGY" }
+    }
+  };
+  function payLinkFor_(d){
+    var res = (String(d.residence || "").indexOf("欧州") !== -1) ? "欧州在住" : "日本在住";
+    var inst = (String(d.installment || "").indexOf("2回分割") !== -1) ? "2回分割" : "一括";
+    var t = PAY_LINKS[res]; if (!t) return "";
+    var k = (d.payment === "PayPal") ? t.PAYPAL : (d.payment === "Stripe（クレジットカード）" ? t.STRIPE : null);
+    return k ? (k[inst] || "") : "";
+  }
+
   form.addEventListener('submit', function(e){
     e.preventDefault();
     if(!document.getElementById('agree').checked){ return; }
@@ -603,6 +629,16 @@
       body: new URLSearchParams({ payload: JSON.stringify(data) })
     }).then(function(){
       form.style.display="none";
+      var _link = payLinkFor_(data);
+      if (_link) {
+        // Stripe・PayPal：申込完了画面を挟まず、そのままお支払いのページへ（2026-10-13 本人ルール）
+        var _pr = document.getElementById('payRedirect');
+        document.getElementById('payLink').href = _link;
+        _pr.style.display = "block";
+        window.scrollTo({top:_pr.offsetTop-40, behavior:"smooth"});
+        setTimeout(function(){ window.location.href = _link; }, 1200);
+        return;
+      }
       document.getElementById('thanks').style.display="block";
       window.scrollTo({top:document.getElementById('thanks').offsetTop-40, behavior:"smooth"});
     }).catch(function(){
