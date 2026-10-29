@@ -39,7 +39,7 @@ a{color:var(--blue);font-weight:500}
 <header><div class="in"><div class="lb">8週間 試験対策講座</div><h1>授業の録画</h1></div></header>
 <main id="app"></main>
 <script>
-const BLOB={"s":"bn5QfVlbX6CEwhOvL7Oo9Q==","i":"39IhpnpCphx97+f8","d":"OxI0s55tzzozcn7SKDENwms0r+ae4Rmwa2IqQ7fmvHbb7WeridOriol3d55jXBbyuk1D0r1SzZx1N9bGvZL2B3cD/HwRfRCbYMLhxdQoYhX7fVVokscXHqKCMRBePReNMtQ0Y0A0IN0K2mOKnbtW2hR62a9m9XnccQMDM5qy5y+hyoPrVr6B5O3DV5PgbK79ySb6sYck+b9jqjzwhLXxj5sLcpje6vy+PzUubfrQL4V5PLvRgD0ivzb3MTctmTeYvxiYfGLku8QKKW75bBJK0za9X2rovKJCSXJj+Npen2R+tcLTDtKn1gmQOsaB6mEOVWSjqJ8IKglb743WH2rFnblcxYLRFVM9cHGHl0CcZ/taOzN9XulCQveR151k3yl52OekTw2WPE6znfOA4tEwCoxXD5v2QzuEIzdhRX90C+grjI2zNwBaRUnZk1K/L04dz7IHYLeLpeB6Gk5lr4/zNiA/KPb/nLQLZ82hTNNiefWIkLCidzUdI+wP+zUBnSlodTaCOT3uiQQjaIC+0ey65XKIyvVHkvwRUxd2Pt0+D+Feo45EKO3DhiL28nUHc2+0wWC/klsJdCBHdeQUirJtjaiZqP6/X/8aUTCMmg6dqtnRNCwUJ+MW4nvGOb6vYodI4Y+beEwl4m+oVicibMKGjaXh8rX1sX5v99HMySAjt2NbF9Ll+DvSzfUuP1EuxkwMEU+taPp3s8D2xx0jw68CeIrW+Gwu4ENCF6p2XYyyUAjjizCJFN+6sUZ070+hBa/d8UNpk39My/VA+vZHaPp7dfHrPtJEKJUW+4yHm/NjsarJs9pMLxmvYcCO5lR1HXqoKieMbEKoY/638cQF5gPVPo+w6m1soUQP2GpxGi2d5VK9IzFrHj0NIFtf0WXR6Dc4hIOwS4qzQr9jDwkPg9H8/KEkts0nObNGHk3hEwSzF7KPN5sYBKI7AQyiOqwvVRVXWALiKchQgWhlWcXrsdgT3cqiucUN8YYi1vMbjXMIorg="};
+const BLOB={"s":"P9lY0fUHw1OHDLeXYpkqbA==","i":"fer0g7RKh5u5LoFW","d":"5XW/k8bLyZmgnf0VmKHCIJ3D16QzBmMa06XWwczn2+J0UHLL/b2+NkyG519DOks4H8c0jpPfCnawuMrA8J2gGNYnaLhaiK2q2mFgG3RvPQth5zPFVEyWiUmUi7oibo+YgzySiqty6QNscokoWyszSXPXeQexzHNThUehVDFvDyKA3KyFLqQJnJeGvGMeIWjB2JYhlTX6r9I2sac1kJGhtYUzFvOW8X1qLU3smICSr6dETxvB47JGVxfJCuqJ4v0aQEz1BxfJVNeBoPrS1A59mkPCAsFtOVuQogTcjIA6WHhxo/p5z6TTdKmqbKeC2sH5Iera4AsZqbl3st43Z5P2zGdNp+2nzT4TGpHWsOh4t9H/UQtUS47jI3DaPaLY6rp6UHKJu2/I8MDzUkLEq5ugRuvQaNLc63Gx+yeyFy4mLWHRf6UyTnVyUjKAcn7p0Hw6+pRq+0hFDTm6BwgDR0Zn3IlAHuBWbMUIZlOQm1mtcfqGJIrUxcSiJk3tvl8ySxxx+e1Pq5raTRTxExxQ1lArMgb0npwLkKXBKCgTnl1zTRQV54KFawRLM6pEIPJ4gWnYpKj4EWULKptpNf+OMohk43lNxWka0Jpck7Kgwrc+KyPPnqqFjxr33rZcwmwWfWd8I3N90Ux+Gd4l7GlIyA87W7eKdlF2EDBBi8jhFSvnlKoybRx035wzXQyOlr74kGSBlfijuY851ccMX3sN2gyzY5xsoxJc47wsZEO42WzUVF9VkrdhWe/zecJKBB2Cdir0nm9+AkIWnUG24arvaEPKDDqsr//yuaDOXjAC6NQ2wr2CyGFDU5Y45NRVNrSMotRfNCxp0j6r0jx876c4zwdwLyRh061SA27IAvB0o/CHyOhnGonxLKk4KIC1O/KInSCNaLNeueDgGQnC2YQSSetGQBuoEdkMxKVjICjbWj5FSMddS/5BiUJESTFyt7BlO82D2mZwysCVHaaUhHAFGm5/lnMNhjA7KyDobxy+qs86X8g="};
 const END=Date.parse("2026-12-20T23:59:59+09:00"); // 試験の最終日の終わりまで（日本時間）
 const app=document.getElementById("app");
 const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
@@ -54,7 +54,7 @@ async function unlock(pass){
 const dj=d=>{const x=new Date(d+"T12:00:00+09:00");return (x.getMonth()+1)+"月"+x.getDate()+"日（"+"日月火水木金土"[x.getDay()]+"）";};
 function renderEnded(){app.innerHTML=`<div class="card"><h2>視聴できる期間は終わりました</h2><p>授業の録画は、試験の最終日（12月20日）までのご案内でした。ご視聴ありがとうございました。</p><p class="note">お問い合わせ：school@iob.bio</p></div>`;}
 function renderGate(msg){app.innerHTML=`<div class="card"><h2>パスワードを入れてください</h2>
-  <p>授業の録画を見られるページです。ドリルと同じパスワードです。</p>
+  <p>授業の録画を見られるページです。BANDでお伝えしたパスワードを入れてください。</p>
   <label class="f" for="pw">パスワード</label><input type="password" id="pw" autocomplete="off">
   <div class="err" id="er">${msg||""}</div><button class="btn" id="go">ひらく</button></div>`;
   const go=async()=>{const p=document.getElementById("pw").value.trim();if(!p)return;try{const v=await unlock(p);store.set("v8_pass",p);renderList(v);}catch(e){document.getElementById("er").textContent="パスワードが合いません。もう一度入れてください。";}};
