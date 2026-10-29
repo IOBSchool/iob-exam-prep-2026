@@ -1,0 +1,20 @@
+name: close-w8rec-videos-page
+on:
+  schedule:
+    - cron: "59 14 20 12 *"   # 2026-12-20 23:59 JST（= 14:59 UTC）に、録画ページを閉じる
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  close:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: 録画ページを「期間終了」に差し替える
+        run: |
+          cp w8rec-q4k9t2x7/ended.html w8rec-q4k9t2x7/index.html
+          git config user.name "iob-bot"
+          git config user.email "noreply@github.com"
+          git add w8rec-q4k9t2x7/index.html
+          git commit -m "視聴期間が終わったので、録画ページを閉じる" || exit 0
+          git push
